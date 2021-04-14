@@ -1,0 +1,23 @@
+/* .nav-header {
+    margin-bottom: 0em;
+    width: 100%;
+} */
+
+.header-brand {
+    font-size: 3em;
+    color: white;
+    margin-right: 15px;
+    width: 70%;
+}
+
+.nav-link {
+    font-size: 14px;
+    color: white;
+    margin-right: 20px;
+    font-weight: bold;
+    text-align: right;
+    min-width: fit-content;
+}
+
+
+ 
