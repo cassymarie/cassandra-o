@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
+import { Container } from 'react-bootstrap'
 import PuzzleTile from '../components/puzzleTile.js'
 import { TILE_COUNT, GRID_SIZE, BOARD_WIDTH } from '../constants.js'
-// import { Container } from 'react-bootstrap'
+
 import '../styles/Puzzle.css'
 
 function Puzzle(){
@@ -11,13 +12,13 @@ function Puzzle(){
     const style = { width: BOARD_WIDTH, height: (pieceSize * 2)}
     
         return(
-            <>
+            <Container>
             <ul sytle={style} className="board">
                 {tiles.map((tile, index) => (
                     <PuzzleTile key={tile} index={index} tile={tile} width={pieceSize} height={pieceSize}/>
                 ))}
-            </ul>
-            </>
+            </ul> 
+            </Container>
         )
 }
 

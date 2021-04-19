@@ -3,7 +3,7 @@ import { TILE_COUNT, GRID_SIZE } from '../constants.js'
 //Credits to https://codepen.io/unidented/pen/QNWdRQ
 export function isSolvable(tiles){
     let product = 1
-    for (let i=1, l = TILE_COUNT - 1; i <=1; i++){
+    for (let i = 1, l = TILE_COUNT - 1; i <= l; i++){
         for (let j= i+1, m = 1+1; j <=m; j++){
             product *= (tiles[i-1] - tiles[j-1])/ (i-j)
         }
@@ -21,21 +21,22 @@ export function isSolved(tiles){
 }
 
 // Get the linear index from a row/col pair
-export function getIndex(row,col){
+export function getIndex(row, col){
     return parseInt(row, 10) * GRID_SIZE + parseInt(col,10)
 }
 
 // Get the row/col pair from linear index
 export function getMatrixPosition(index){
+    // let pos = index + 1
     return{
-        row: Math.floor(index/GRID_SIZE),
+        row: Math.floor(index/GRID_SIZE) ,
         col: index % GRID_SIZE
     }
 }
 
-export function getVisualPosition(row,col,width,height){
+export function getVisualPosition(row, col, width, height){
     return {
-        x: col * width,
+        x: (col * width),
         y: row * height
     }
 }

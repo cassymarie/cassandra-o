@@ -1,5 +1,5 @@
 import React from 'react'
-import { GRID_SIZE, TILE_COUNT, BOARD_WIDTH } from '../constants.js'
+import {  TILE_COUNT } from '../constants.js'
 import { getMatrixPosition, getVisualPosition } from '../helpers/puzzleHelper.js'
 
 function PuzzleTile(props) {
@@ -7,23 +7,21 @@ function PuzzleTile(props) {
 
     const { row, col } = getMatrixPosition(index)
     const visualPos = getVisualPosition(row, col, width, height)
+
     const tileStyle = {
-        width: `calc(100%/${GRID_SIZE})`,
-        height: `calc(100%/${GRID_SIZE})`,
+        width: width,
+        height: height,
         translateX: visualPos.x,
         translateY: visualPos.y,
     }
 
-        return(
-            <li
-                style={{width: tileStyle.width, height:tileStyle.width, transform: `translate3d(${tileStyle.translateX})px, ${tileStyle.translateY}px, 0)`,
-                // Is last tile?
-                opacity: tile === TILE_COUNT - 1 ? 0 : 1,}} className="tile"
-                >
-                {`${tile + 1}`}
-            </li>
+    console.log('style: ', tileStyle)
 
-        )
+        return(
+            <li style={{width: tileStyle.width, height:tileStyle.width, transform: `translate3d(${tileStyle.translateX}px, ${tileStyle.translateY}px, 0)`, opacity: tile === TILE_COUNT - 1 ? 0 : 1,}} className="tile">
+                {`${index + 1}`}
+            </li>
+            )
 
 }
 
