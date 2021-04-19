@@ -5,7 +5,6 @@ class HomePage extends Component {
     render(){
         return(
             <>
-                <h1>All about ME!</h1>
                 <Puzzle />
             </>
         )
