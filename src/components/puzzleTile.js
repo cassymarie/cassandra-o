@@ -2,6 +2,7 @@ import React from 'react'
 import {  TILE_COUNT } from '../constants.js'
 import { getMatrixPosition, getVisualPosition } from '../helpers/puzzleHelper.js'
 import { Motion, spring } from 'react-motion'
+import { ListGroup } from 'react-bootstrap'
 
 function PuzzleTile(props) {
     const { tile, index, width, height, handleTileClick } = props
@@ -23,9 +24,11 @@ function PuzzleTile(props) {
         return(
             <Motion style={motionStyle}>
              {({translateX, translateY}) => (
-                <li style={{width: tileStyle.width, height:tileStyle.width, transform: `translate3d(${translateX}px, ${translateY}px, 0)`, opacity: tile === TILE_COUNT - 1 ? 0 : 1,}} className="tile" onClick={() => handleTileClick(index) }>
+                 <ListGroup.Item style={{width: tileStyle.width, height:tileStyle.width, transform: `translate3d(${translateX}px, ${translateY}px, 0)`, opacity: tile === TILE_COUNT - 1 ? 0 : 1,}} bsPrefix="tile" onClick={() => handleTileClick(index)} >
+                {/* <li style={{width: tileStyle.width, height:tileStyle.width, transform: `translate3d(${translateX}px, ${translateY}px, 0)`, opacity: tile === TILE_COUNT - 1 ? 0 : 1,}} className="tile" onClick={() => handleTileClick(index) }> */}
                     {`${index + 1}`}
-                </li>
+                {/* </li> */}
+                </ListGroup.Item>
             )}
             </Motion>
             )

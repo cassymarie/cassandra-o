@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Container, Button } from 'react-bootstrap'
+import { Button, ListGroup, Container } from 'react-bootstrap'
 import PuzzleTile from '../components/puzzleTile.js'
 import { TILE_COUNT, GRID_SIZE, BOARD_WIDTH } from '../constants.js'
 import { shuffle, canSwap, swap, isSolved } from '../helpers/puzzleHelper.js'
@@ -44,13 +44,14 @@ function Puzzle(){
             {!isStarted ? <Button onClick={() => handleStartClick()}>Start Game</Button> : <Button onClick={() => shuffleTiles()}>Restart</Button>}
             
             <Container>
-            <ul sytle={style} className="board">
+            {/* <ul sytle={style} className="board"> */}
+            <ListGroup>
                 {tiles.map((tile, index) => (
                     <PuzzleTile key={tile} index={index} tile={tile} width={pieceSize} height={pieceSize} handleTileClick={handleTileClick}/>
                 ))}
-            </ul>
-            
-            </Container>
+            {/* </ul> */}
+            </ListGroup>
+            </Container >
             </>
         )
 }
