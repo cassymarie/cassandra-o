@@ -19,5 +19,7 @@
 .aboutMe {
     border: black solid 1px;
     background-color: lightpink;
+    margin: auto;
+    height: fit-content;
 }
 

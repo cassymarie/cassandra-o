@@ -20,7 +20,7 @@ const handleImageChange = (e) => {
 
         return(
             <Container bsPrefix="aboutMe">
-                <Board />
+                <Board imgUrl={imgUrl}/>
                 <input value={imgUrl} onChange={handleImageChange} />
             </Container>
         )

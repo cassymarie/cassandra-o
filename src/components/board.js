@@ -7,7 +7,8 @@ import { shuffle, canSwap, swap, isSolved } from '../helpers/puzzleHelper.js'
 
 import '../styles/Puzzle.css'
 
-function Board(){
+function Board(props){
+    const { imgUrl } = props
     // console.log(`BoardWith: ${BOARD_WIDTH}, GridSize: ${GRID_SIZE}, tileCount: ${TILE_COUNT}`)
     const [tiles, setTiles] = useState([...Array(TILE_COUNT).keys()])
     const [isStarted, setIsStarted] = useState(false)
@@ -15,7 +16,10 @@ function Board(){
     const pieceSize = Math.round(BOARD_WIDTH/GRID_SIZE)
     const style = { width: BOARD_WIDTH, height: (pieceSize * 2)}
 
-    console.log('isStarted?: ', isStarted)
+    // const imgSize = () => {
+    //     console.log(imgUrl)
+
+    // }
 
     const shuffleTiles = () => {
         const shuffledTiles = shuffle(tiles)
@@ -44,12 +48,11 @@ function Board(){
             {!isStarted ? <Button onClick={() => handleStartClick()}>Start Game</Button> : <Button onClick={() => shuffleTiles()}>Restart</Button>}
             
             <Container>
-            {/* <ul sytle={style} className="board"> */}
             <ListGroup style={style} bsPrefix="board">
                 {tiles.map((tile, index) => (
-                    <PuzzleTile key={tile} index={index} tile={tile} width={pieceSize} height={pieceSize} handleTileClick={handleTileClick}/>
+                    <PuzzleTile 
+                        key={tile} index={index} tile={tile} width={pieceSize} height={pieceSize} imgUrl={imgUrl} handleTileClick={handleTileClick}/>
                 ))}
-            {/* </ul> */}
             </ListGroup>
             </Container >
             </>

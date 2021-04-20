@@ -1,6 +1,6 @@
 export const BOARD_WIDTH = breakpoint();
-export const TILE_COUNT =  BOARD_WIDTH < 700 ? 9 : 8
-export const GRID_SIZE = BOARD_WIDTH < 700 ? 3 : 4
+export const TILE_COUNT =  8
+export const GRID_SIZE =  4
 
 function breakpoint() {
     let breakpoints = {
