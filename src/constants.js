@@ -4,11 +4,11 @@ export const GRID_SIZE = BOARD_WIDTH < 700 ? 3 : 4
 
 function breakpoint() {
     let breakpoints = {
-        '(min-width: 1200px)': 1000,
-        '(min-width: 992px) and (max-width: 1199.98px)': 920,
-        '(min-width: 768px) and (max-width: 991.98px)': 720,
-        '(min-width: 576px) and (max-width: 767.98px)': 500,
-        '(max-width: 575.98px)': 320,
+        '(min-width: 1200px)': 1100, //50
+        '(min-width: 992px) and (max-width: 1199.98px)': 930, //30
+        '(min-width: 768px) and (max-width: 991.98px)': 720, //20
+        '(min-width: 576px) and (max-width: 767.98px)': 525,  //20
+        '(max-width: 575.98px)': 525,
     }
 
     for (let media in breakpoints) {
@@ -19,3 +19,4 @@ function breakpoint() {
 
     return null;
 }
+

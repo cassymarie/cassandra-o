@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap'
-import Puzzle from '../components/puzzle.js'
+import Board from '../components/board.js'
 import { updateURLParameter } from "../helpers/puzzleHelper.js"
 
 function HomePage () {
@@ -19,8 +19,8 @@ const handleImageChange = (e) => {
 }
 
         return(
-            <Container className="aboutMe">
-                <Puzzle />
+            <Container bsPrefix="aboutMe">
+                <Board />
                 <input value={imgUrl} onChange={handleImageChange} />
             </Container>
         )

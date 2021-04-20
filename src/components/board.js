@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { Button, ListGroup, Container } from 'react-bootstrap'
-import PuzzleTile from '../components/puzzleTile.js'
+import PuzzleTile from './puzzleTile.js'
 import { TILE_COUNT, GRID_SIZE, BOARD_WIDTH } from '../constants.js'
 import { shuffle, canSwap, swap, isSolved } from '../helpers/puzzleHelper.js'
 
 
 import '../styles/Puzzle.css'
 
-function Puzzle(){
+function Board(){
     // console.log(`BoardWith: ${BOARD_WIDTH}, GridSize: ${GRID_SIZE}, tileCount: ${TILE_COUNT}`)
     const [tiles, setTiles] = useState([...Array(TILE_COUNT).keys()])
     const [isStarted, setIsStarted] = useState(false)
@@ -45,7 +45,7 @@ function Puzzle(){
             
             <Container>
             {/* <ul sytle={style} className="board"> */}
-            <ListGroup>
+            <ListGroup style={style} bsPrefix="board">
                 {tiles.map((tile, index) => (
                     <PuzzleTile key={tile} index={index} tile={tile} width={pieceSize} height={pieceSize} handleTileClick={handleTileClick}/>
                 ))}
@@ -56,4 +56,4 @@ function Puzzle(){
         )
 }
 
-export default Puzzle
+export default Board
