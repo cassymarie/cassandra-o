@@ -12,8 +12,8 @@ function PuzzleTile(props) {
         width: width,
         height: height,
         translateX: visualPos.x,
-        translateY: visualPos.y,
-        backgroundImage: `url(${imgUrl})`,
+        translateY: visualPos.y, 
+        backgroundImage: `url(./images/${imgUrl})`,
         backgroundSize: `${BOARD_WIDTH}px ${height * 2}px`,
         backgroundPosition: `${width * Math.floor(tile % GRID_SIZE)}px ${height * Math.floor(tile/GRID_SIZE)}px`
     }

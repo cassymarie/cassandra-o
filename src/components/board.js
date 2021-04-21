@@ -7,19 +7,18 @@ import { shuffle, canSwap, swap, isSolved } from '../helpers/puzzleHelper.js'
 
 import '../styles/Puzzle.css'
 
-function Board(props){
-    const { imgUrl } = props
+function Board(){
     // console.log(`BoardWith: ${BOARD_WIDTH}, GridSize: ${GRID_SIZE}, tileCount: ${TILE_COUNT}`)
     const [tiles, setTiles] = useState([...Array(TILE_COUNT).keys()])
     const [isStarted, setIsStarted] = useState(false)
+    // const [imgUrl, setImgUrl] = useState("flatirons.jpeg")
 
     const pieceSize = Math.round(BOARD_WIDTH/GRID_SIZE)
     const style = { width: BOARD_WIDTH, height: (pieceSize * 2)}
 
-    // const imgSize = () => {
-    //     console.log(imgUrl)
+    const myImages = ['flatirons.jpeg','n_cascades.jpeg','seattle.jpeg','yellowstone.jpeg','cherry_blossoms.jpeg']
 
-    // }
+    const randomImage = myImages[Math.floor(Math.random() * myImages.length)]
 
     const shuffleTiles = () => {
         const shuffledTiles = shuffle(tiles)
@@ -51,7 +50,7 @@ function Board(props){
             <ListGroup style={style} bsPrefix="board">
                 {tiles.map((tile, index) => (
                     <PuzzleTile 
-                        key={tile} index={index} tile={tile} width={pieceSize} height={pieceSize} imgUrl={imgUrl} handleTileClick={handleTileClick}/>
+                        key={tile} index={index} tile={tile} width={pieceSize} height={pieceSize} imgUrl={randomImage} handleTileClick={handleTileClick}/>
                 ))}
             </ListGroup>
             </Container >
