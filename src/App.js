@@ -10,14 +10,14 @@ import '../src/styles/App.css'
 class App extends Component {
   render (){
     return (
-      <>
+      <div className="App">
         <Switch>
           <Route exact path="/" component={HomePage}></Route>
           <Route exact path="/projects" component={ProjectPage}></Route>
           <Route exact path="/blog" component={BlogPage}></Route>
           <Route exact path="/justfun" component={FunPage}></Route>
         </Switch>
-      </>
+      </div>
     )
   }
 }
