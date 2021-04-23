@@ -5,7 +5,6 @@ import HomePage from './containers/HomePage'
 import ProjectPage from './containers/ProjectPage'
 import FunPage from './containers/FunPage'
 
-import '../src/styles/App.scss'
 
 class App extends Component {
   render (){

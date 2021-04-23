@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom'
-import './styles/index.scss';
+import './styles/index.scss'
 import App from './App';
 import NavHeader from './containers/NavHeader'
 import 'bootstrap/dist/css/bootstrap.min.css'
+
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(

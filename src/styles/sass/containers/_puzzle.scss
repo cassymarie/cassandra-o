@@ -1,0 +1,19 @@
+
+.board {
+    // position: relative;
+    border: 1px solid $color-main-green;
+    margin: auto;
+    background-color: lightgray;
+
+    .tile {
+        position: absolute;
+        list-style: none;
+        background-color: $color-main-green;
+        display: grid;
+        // border: $color-board-background .5px solid;
+        border: 1px solid $color-main-green;
+        &:hover {
+            border: 1px solid $color-tile-hover;
+        } 
+    }
+}

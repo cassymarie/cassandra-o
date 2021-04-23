@@ -1,0 +1,90 @@
+
+.nav-header {
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 0px;
+    color: $color-dark-green;
+    background-color: $color-pale-green;
+    align-items: center;
+    border-bottom: 1px $color-dark-green solid;
+
+    .header-logo{
+        width: 100px;
+
+        @include for-size(tablet-portrait){
+            width: 70px;
+        }
+
+        @include for-size(mobile){
+            width: 50px;
+        }
+    }
+
+
+    .header-brand{
+        font-family: $text-fancy-name;
+        font-size: 28px;
+        border: none;
+        min-width: fit-content;
+        max-width: 80%;
+        margin-left: 15px;
+        padding-top: 10px;
+
+        @include for-size(mobile){
+            font-size: 20px;
+        }
+    }
+
+    @include for-size(mobile){
+        background-color: pink;
+        color: black
+    }
+
+    @include for-size(tablet-portrait){
+        background-color: cyan;
+        color: black;
+    }
+
+    @include for-size(tablet-landscape){
+        background-color: purple;
+        color: white;
+    }
+
+    @include for-size(laptop){
+        background-color: green;
+        color: white;
+
+    }
+
+    @include for-size(desktop){
+        background-color: orange;
+    }
+
+    .links{
+        background-color: greenyellow;
+    }
+
+    div {
+        display: flex;
+        float: right;
+        margin-left: 15px;
+    }
+
+    a {
+        text-decoration: none;
+        font-size: 18px;
+        color: inherit;
+    }
+
+}
+
+// .header-brand {
+//     font-size: 3.5em;
+//     margin-left: 0.75em;
+//     padding-top: 0.25em;
+//     width: 70%;
+//     font-family: $text-fancy-name;
+// }
+
+
+

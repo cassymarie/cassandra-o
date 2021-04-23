@@ -1,0 +1,4 @@
+ .App {
+   @include centered(column);
+   height: 100vh;
+}

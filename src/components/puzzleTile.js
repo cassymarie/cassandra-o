@@ -1,5 +1,5 @@
 import React from 'react'
-import {  TILE_COUNT, BOARD_WIDTH, GRID_SIZE } from '../constants.js'
+import {  TILE_COUNT, boardSize, GRID_SIZE } from '../constants.js'
 import { getMatrixPosition, getVisualPosition } from '../helpers/puzzleHelper.js'
 import { Motion, spring } from 'react-motion'
 import { ListGroup } from 'react-bootstrap'
@@ -14,10 +14,9 @@ function PuzzleTile(props) {
         translateX: visualPos.x,
         translateY: visualPos.y, 
         backgroundImage: `url(./images/${imgUrl})`,
-        backgroundSize: `${BOARD_WIDTH}px ${height * 2}px`,
-        backgroundPosition: `${width * (GRID_SIZE - Math.floor(tile % GRID_SIZE))}px ${height * Math.floor(tile/GRID_SIZE)}px`
-    }
-
+        backgroundSize: `${boardSize()}px ${height * 2}px`,
+        backgroundPosition: `${width * (GRID_SIZE - Math.floor(tile % GRID_SIZE))}px ${height * Math.floor(tile/GRID_SIZE)}px`}
+        
     const motionStyle = {
         translateX: spring(visualPos.x),
         translateY: spring(visualPos.y)

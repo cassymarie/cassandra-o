@@ -1,13 +1,13 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+// Utilities
+@import './sass/utilities/variables';
+@import './sass/utilities/mixins';
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
+// Components
+
+
+// Layout
+@import './sass/layout/nav';
+@import './sass/layout/app';
+
+// Containers
+@import './sass/containers/puzzle';
