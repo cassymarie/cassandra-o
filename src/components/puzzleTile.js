@@ -15,7 +15,7 @@ function PuzzleTile(props) {
         translateY: visualPos.y, 
         backgroundImage: `url(./images/${imgUrl})`,
         backgroundSize: `${BOARD_WIDTH}px ${height * 2}px`,
-        backgroundPosition: `${width * Math.floor(tile % GRID_SIZE)}px ${height * Math.floor(tile/GRID_SIZE)}px`
+        backgroundPosition: `${width * (GRID_SIZE - Math.floor(tile % GRID_SIZE))}px ${height * Math.floor(tile/GRID_SIZE)}px`
     }
 
     const motionStyle = {
@@ -26,7 +26,15 @@ function PuzzleTile(props) {
         return(
             <Motion style={motionStyle}>
              {({translateX, translateY}) => (
-                 <ListGroup.Item style={{ ...tileStyle, transform: `translate3d(${translateX}px, ${translateY}px, 0)`, opacity: tile === TILE_COUNT - 1 ? 0 : 1,}} bsPrefix="tile" onClick={() => handleTileClick(index)}/>
+                 <ListGroup.Item style={{ ...tileStyle, transform: `translate3d(${translateX}px, ${translateY}px, 0)`, opacity: tile === TILE_COUNT - 1 ? 0 : 1,}} bsPrefix="tile" onClick={() => handleTileClick(index)}>
+
+                        {/* Position Index: {index} <br></br>  
+                        Tile #: {tile}<br></br> 
+                        Row:{Math.floor(tile/GRID_SIZE)} -  Col: {Math.floor(tile % GRID_SIZE)}<br></br>
+                        {`${width * Math.floor(tile % GRID_SIZE)}px  `} x {`  ${height * Math.floor(tile/GRID_SIZE)}px`}<br></br>
+                        x: {tileStyle.translateX} y: {tileStyle.translateY}<br></br> */}
+                    
+                 </ListGroup.Item>
             )}
             </Motion>
             )

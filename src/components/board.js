@@ -5,23 +5,27 @@ import { TILE_COUNT, GRID_SIZE, BOARD_WIDTH } from '../constants.js'
 import { shuffle, canSwap, swap, isSolved } from '../helpers/puzzleHelper.js'
 
 
-import '../styles/Puzzle.css'
+import '../styles/Puzzle.scss'
 
 function Board(){
     // console.log(`BoardWith: ${BOARD_WIDTH}, GridSize: ${GRID_SIZE}, tileCount: ${TILE_COUNT}`)
     const [tiles, setTiles] = useState([...Array(TILE_COUNT).keys()])
     const [isStarted, setIsStarted] = useState(false)
-    // const [imgUrl, setImgUrl] = useState("flatirons.jpeg")
+    const [imgUrl, setImgUrl] = useState("flatirons.jpeg")
 
     const pieceSize = Math.round(BOARD_WIDTH/GRID_SIZE)
     const style = { width: BOARD_WIDTH, height: (pieceSize * 2)}
 
-    const myImages = ['flatirons.jpeg','n_cascades.jpeg','seattle.jpeg','yellowstone.jpeg','cherry_blossoms.jpeg']
+    const myImages = ['flatirons.jpeg','seattle.jpeg','yellowstone.jpeg']
 
-    const randomImage = myImages[Math.floor(Math.random() * myImages.length)]
+    const puzzleImage = () => {
+       let img = myImages[Math.floor(Math.random() * myImages.length)]
+        setImgUrl(img)
+    }
 
     const shuffleTiles = () => {
         const shuffledTiles = shuffle(tiles)
+        puzzleImage()
         setTiles(shuffledTiles)
     }
 
@@ -41,16 +45,20 @@ function Board(){
         setIsStarted(true)
     }
 
+    const solvePuzzle = () => {
+        setTiles([...Array(TILE_COUNT).keys()])
+    }
+
         return(
             <>
             { hasWon && isStarted && <div>🙌 🙌 Puzzle Solved 🙌 🙌</div>}
             {!isStarted ? <Button onClick={() => handleStartClick()}>Start Game</Button> : <Button onClick={() => shuffleTiles()}>Restart</Button>}
-            
+            <Button onClick={() => solvePuzzle()}>Solve</Button>
             <Container>
             <ListGroup style={style} bsPrefix="board">
                 {tiles.map((tile, index) => (
                     <PuzzleTile 
-                        key={tile} index={index} tile={tile} width={pieceSize} height={pieceSize} imgUrl={randomImage} handleTileClick={handleTileClick}/>
+                        key={tile} index={index} tile={tile} width={pieceSize} height={pieceSize} imgUrl={imgUrl} handleTileClick={handleTileClick}/>
                 ))}
             </ListGroup>
             </Container >

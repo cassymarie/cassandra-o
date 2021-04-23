@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Nav, Navbar, Image } from 'react-bootstrap'
 import { Linkedin } from 'react-bootstrap-icons'
-import '../styles/nav.css'
+import '../styles/nav.scss'
 
 
 class NavHeader extends Component {

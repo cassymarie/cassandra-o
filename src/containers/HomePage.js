@@ -1,5 +1,4 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
 import Board from '../components/board.js'
 // import { updateURLParameter } from "../helpers/puzzleHelper.js"
 
@@ -22,9 +21,9 @@ function HomePage () {
 // }
 
         return(
-            <Container bsPrefix="aboutMe">
+            <>
                 <Board/>
-            </Container>
+            </>
         )
 }
 
